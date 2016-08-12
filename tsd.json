@@ -1,0 +1,45 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "express/express.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "jade/jade.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "debug/debug.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "stylus/stylus.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "mime/mime.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "1003a9ce5250b8fe374cca07c21a19ea474622b2"
+    }
+  }
+}

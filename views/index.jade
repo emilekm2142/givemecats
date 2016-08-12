@@ -1,0 +1,105 @@
+﻿html
+link(href='/css/main.css', rel='stylesheet')
+link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+body
+    div#top   
+        span(class="glyphicon glyphicon-menu-hamburger white", id="menuButton")
+    div#menu
+        span This thing gives cats
+        img(src="img/omg.png" width="100%")
+    div#botControlls 
+        div.newVid
+            span(class="glyphicon glyphicon-repeat white newVidIcon", title="get new video")
+           
+            
+    div#bot Endless funny cats loop! F11 for fulscreen
+       
+    div#player
+
+
+script(src="https://code.jquery.com/jquery-3.1.0.min.js",   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",   crossorigin="anonymous")
+|<script   src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js"   integrity="sha256-55Jz3pBCF8z9jBO1qQ7cIf0L+neuPTD1u7Ytzrp2dqo="   crossorigin="anonymous"></script>
+script(src='/javascripts/script.js')
+script.
+    var lastVid="None";
+    function getNewVideo(){
+        $.get('cats', function(data) {
+          if (lastVid=="None"){
+            player.loadVideoById(data, 0, "large");
+            lastVid=data;
+          }
+          else{
+          
+            if (data!=lastVid){
+                player.loadVideoById(data, 0, "large");
+            lastVid=data;
+            }
+            else{
+            getNewVideo();
+            }
+          
+          }
+        });
+    }
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+    function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        playerVars: {
+        iv_load_policy:3,
+                autoplay: 1,
+                loop: 0,
+                controls: 0,
+                showinfo: 0,
+                autohide: 1,
+                modestbranding: 1,
+                vq: 'hd1080'},
+        videoId: 'G8t4xIal6gQ',
+        events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange,
+        'onError':onPlayerError
+        }
+    });
+
+    }
+    function onPlayerReady(event) {
+    player.playerVars = {
+                autoplay: 1,
+                loop: 1,
+                controlss: 0,
+                showinfo: 0,
+                autohide: 1,
+                modestbranding: 1,
+                vq: 'hd1080'};
+    getNewVideo();
+    event.target.playVideo();
+  
+    }
+    function onPlayerError(code){
+        getNewVideo();
+    }
+    function onPlayerStateChange(event) {
+         if(event.data === 0) {          
+                getNewVideo();
+            }
+    }
+    function stopVideo() {
+    player.stopVideo();
+    }
+    $(function() {
+    $( document ).tooltip();
+    $("#menuButton").click(function(){
+        $("#menu").slideToggle();
+    });
+    $(".newVidIcon").click(function(){
+       getNewVideo();
+    });
+    getNewVideo();
+    });
+    
