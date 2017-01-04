@@ -20,7 +20,7 @@ router.get('/cats', function (req, res) {
         '    https://www.youtube.com/watch?v=Y6wGlaPXYFk', '    https://www.youtube.com/watch?v=MuN1tUWqV4s',
         '    https://www.youtube.com/watch?v=ekK7peRxKGc', '    https://www.youtube.com/watch?v=tdHIhAFvEa0',
         '    https://www.youtube.com/watch?v=xz-aX0zILc0', '    https://www.youtube.com/watch?v=lsnVO2RT8Nk',
-        '        https: //www.youtube.com/watch?v=MVh-S4bfPZI'
+        '        https: //www.youtube.com/watch?v=MVh-S4bfPZI','https://www.youtube.com/watch?v=F_JqkY2Pb2o'
     ];
     rand = allVids[Math.floor(Math.random() * allVids.length)];
     rand = rand.replace("https://www.youtube.com/watch?v=", '').replace(' ','').trim();
